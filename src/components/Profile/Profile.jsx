@@ -10,8 +10,8 @@ const Profile = (props) => {
       <img  src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUNFdBV-133BPHbJIXumWTrTa50eAm78JngA&usqp=CAU'></img>
       </div>
       <div>
-       <MyPosts posts={props.state.posts}
-                    newPostText={props.state.newPostText}
+       <MyPosts posts={props.profilePage.posts}
+                    newPostText={props.profilePage.newPostText}
                    addPosts={props.addPosts}
                    updateNewPostText={props.updateNewPostText}/>
       </div>

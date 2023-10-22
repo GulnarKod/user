@@ -30,13 +30,16 @@ _state: {
        {id:3, name:"Ekterina"}
       ]
 },
-getState(){
-  return this._state
-},
 _callSubscriber(){
   console.log('state was changed');
 },
+getState(){
+  debugger;
+  return this._state
+},
+
 addPosts(){
+  debugger;
   let newPost={
     id:5,
     message:this._state.profilePage.newPostText,
@@ -52,6 +55,23 @@ updateNewPostText(newText){
 },
 subscribe(observer){
  this._callSubscriber= observer;
+},
+dispatch(action){
+if(action.type==='ADD-POST'){
+  let newPost={
+    id:5,
+    message:this._state.profilePage.newPostText,
+    likesCount:2
+  };
+  this._state.profilePage.posts.push(newPost);
+  this._state.profilePage.newPostText='';
+  this._callSubscriber(this._state);
+} else {
+if(action.type==='UPDATE-NEW-POST-TEXT'){
+  this._state.profilePage.newPostText=action.newText;
+  this._callSubscriber(this._state);
+}
+}
 },
 }
 export default store;

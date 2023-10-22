@@ -7,6 +7,7 @@ const MyPosts = (props)=>{
   
     let newElement = React.createRef();
     let postAdd=()=>{
+        debugger;
         props.addPosts();
     }
     let onChangePost=()=>{
