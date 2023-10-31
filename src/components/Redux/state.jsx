@@ -57,7 +57,7 @@ subscribe(observer){
  this._callSubscriber= observer;
 },
 dispatch(action){
-if(action.type==='ADD-POST'){
+if(action.type==='ADD-POSTS'){
   let newPost={
     id:5,
     message:this._state.profilePage.newPostText,
